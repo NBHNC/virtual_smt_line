@@ -10,24 +10,27 @@ class Stacker:
         log_path = "logs/trace.csv"
         write_header = not os.path.exists(log_path)
 
+        fieldnames = [
+            "PCB Name", "Revision", "Barcode", "Datamatrix",
+            "Required Profile", "Oven Profile", "SPI Result",
+            "AOI Result", "Final Status"
+        ]
+
         with open(log_path, "a", newline="") as csvfile:
-            writer = csv.writer(csvfile)
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             if write_header:
-                writer.writerow([
-                    "Barcode",
-                    "Required Profile",
-                    "SPI Result",
-                    "Oven Profile",
-                    "AOI Result",
-                    "Final Status"
-                ])
-            writer.writerow([
-                board.barcode,
-                board.required_profile,
-                board.spi_result,
-                board.oven_profile,
-                board.aoi_result,
-                board.status
-            ])
+                writer.writeheader()
+
+            writer.writerow({
+                "PCB Name": board.pcb_name,
+                "Revision": board.revision,
+                "Barcode": board.barcode,
+                "Datamatrix": board.datamatrix,
+                "Required Profile": board.required_profile,
+                "Oven Profile": board.oven_profile,
+                "SPI Result": board.spi_result,
+                "AOI Result": board.aoi_result,
+                "Final Status": board.status
+            })
 
         return board

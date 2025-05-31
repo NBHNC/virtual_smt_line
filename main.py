@@ -40,26 +40,27 @@ while True:
     elif event == "Unload Board":
         board = loader.load_board()
         loader.current_board = board
-        window["-LOG-"].print(f"[UNLOADER] Injected board {board.barcode}")
+        window["-LOG-"].print(f"[UNLOADER] {board.datamatrix}")
+
 
     elif event == "Paste Printer":
         if loader.current_board:
             board = printer.process(loader.current_board)
-            window["-LOG-"].print(f"[PRINTER] Printed board {board.barcode}")
+            window["-LOG-"].print(f"[PRINTER] Printed board {board.datamatrix}")
         else:
             window["-LOG-"].print("[ERROR] No board available for printing")
 
     elif event == "SPI Inspection":
         if loader.current_board:
             board = spi.process(loader.current_board)
-            window["-LOG-"].print(f"[SPI] {board.barcode} - {board.spi_result}")
+            window["-LOG-"].print(f"[SPI] {board.pcb_name} REV:{board.revision} ({board.datamatrix}) - {board.spi_result}")
         else:
             window["-LOG-"].print("[ERROR] No board available for SPI")
 
     elif event == "Pick & Place":
         if loader.current_board:
             board = pickplace.process(loader.current_board)
-            window["-LOG-"].print(f"[P&P] {board.barcode} components placed")
+            window["-LOG-"].print(f"[P&P] {board.datamatrix} components placed")
         else:
             window["-LOG-"].print("[ERROR] No board available for P&P")
 
@@ -67,21 +68,21 @@ while True:
         if loader.current_board:
             board = oven.process(loader.current_board)
             match_status = "MATCH" if board.status == "OVEN_MATCH" else "MISMATCH"
-            window["-LOG-"].print(f"[OVEN] {board.barcode} reflowed using {board.oven_profile} ({match_status})")
+            window["-LOG-"].print(f"[OVEN] {board.datamatrix} reflowed using {board.oven_profile} ({match_status})")
         else:
             window["-LOG-"].print("[ERROR] No board available for oven")
 
     elif event == "AOI Inspection":
         if loader.current_board:
             board = aoi.process(loader.current_board)
-            window["-LOG-"].print(f"[AOI] {board.barcode} - {board.aoi_result}")
+            window["-LOG-"].print(f"[AOI] {board.datamatrix} - {board.aoi_result}")
         else:
             window["-LOG-"].print("[ERROR] No board available for AOI")
 
     elif event == "Stacker":
         if loader.current_board:
             board = stacker.process(loader.current_board)
-            window["-LOG-"].print(f"[STACKER] {board.barcode} stacked and logged ({board.status})")
+            window["-LOG-"].print(f"[STACKER] {board.datamatrix} stacked and logged ({board.status})")
             loader.current_board = None
         else:
             window["-LOG-"].print("[ERROR] No board to stack")

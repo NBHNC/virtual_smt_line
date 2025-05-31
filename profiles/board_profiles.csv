@@ -1,4 +1,4 @@
-barcode,required_profile
-ABC123,Profile1
-DEF456,Profile2
-XYZ789,Profile1
+board_name,required_profile
+SG201_S1,38cpmPB-FREE_STANDARD
+SG202_S1,38cpmPB-FREE_STANDARD
+SG101_L1,LEAD_STANDARD
