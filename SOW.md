@@ -15,22 +15,7 @@ Develop a modular, GUI-based software tool to simulate the process flow of a sur
 - GUI for operating each SMT station module
 - Simulated barcode and board profile table
 - Board traceability and logging
-- Configurable board input and flow rates
+- Configurable board input
 
-## Timeline
-- Phase 1: Loader and Printer (Weekend)
-- Phase 2: Add SPI, AOI, Oven modules (Next iteration)
-- Phase 3: Logging, config system, failure simulation
 
-## Out-of-Scope
-- Real-time physical equipment interaction
-- Full SCADA or PLC integration
 
-## Risks
-- Overengineering for a simulation
-- Performance limitations of Python GUI for complex UIs
-
-## Stakeholders
-- Developer: Collin
-- Reviewer: Self
-- Audience: Engineering, ATQ (potentially)
