@@ -1,7 +1,7 @@
 # Virtual SMT Line Simulator
 
 ## Purpose
-This project simulates a full SMT production line virtually. It allows simulation of barcode scanning, profile validation, and board movement through virtual modules such as printer, SPI, Pick Place, oven, AIO.
+This project simulates a full SMT production line virtually. It allows simulation of barcode scanning, profile validation, and board movement through virtual modules such as printer, SPI, Pick Place, oven, AOI.
 
 ## Features
 
