@@ -61,7 +61,3 @@ All mainline functionality is working correctly:
 
 Outstanding:
 - Rework loop steps (Start Rework → Solder City → AOI Recheck) are **not yet enforced** through button enable/disable logic.
-
-
-## License
-MIT (or proprietary if internal)
