@@ -9,3 +9,6 @@ class Board:
         self.spi_result = None
         self.oven_profile = None
         self.aoi_result = None
+        self.rework_count = 0
+        self.is_rework = False
+

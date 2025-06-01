@@ -2,18 +2,16 @@ import random
 
 class Oven:
     def __init__(self):
-        self.available_profiles = ["38cpmPB-FREE_STANDARD", "LEAD_STANDARD", "HIGH_TEMP"]
-        self.current_profile = "38cpmPB-FREE_STANDARD"
+        self.available_profiles = ["Standard"]
 
     def process(self, board):
         """Simulate reflow oven behavior and profile match check."""
-        board.oven_profile = self.current_profile
+        current_profile = random.choice(self.available_profiles)
+        board.oven_profile = current_profile
 
-        if board.required_profile == self.current_profile:
+        if current_profile == board.required_profile:
             board.status = "OVEN_MATCH"
-            board.oven_result = "PASS"
         else:
             board.status = "OVEN_MISMATCH"
-            board.oven_result = "FAIL"
 
         return board
