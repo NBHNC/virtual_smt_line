@@ -2,6 +2,7 @@
 
 ---
 
+<<<<<<< HEAD
 ### v1.3 – March 12, 2026
 
 **Status:** Released
@@ -99,6 +100,8 @@
 
 ---
 
+=======
+>>>>>>> bc35b7922419b2af460b54502e19001a285198a8
 ### v1.0 – May 31, 2025
 
 **Status:** Full SMT Line Simulation Functional
@@ -118,8 +121,11 @@
 - SPI and AOI simulated with pass/fail outcomes
 - Board traceability logging to CSV
 - Git version control in place
+<<<<<<< HEAD
 
 **Next Possible Enhancements:**
 - Alarm handling for failed inspections or oven mismatch
 - Batch processing of multiple boards
 - Summary dashboards or status panels
+=======
+>>>>>>> bc35b7922419b2af460b54502e19001a285198a8
